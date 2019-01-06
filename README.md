@@ -144,6 +144,59 @@ Subject: line when responding to this task, so that I can figure out who
 to attribute it to.  And if you forgot (which of course you have not,
 we've been through all of this before), your id is "7c1caf2f50d1".
 
+coding_style.c
+
+
+#include <linux/module.h>
+#include <linux/kernel.h>
+#include <asm/delay.h>
+#include <linux/slab.h>
+
+
+int do_work( int * my_int, int retval ) {
+int x;
+int y=*my_int;
+int z;
+
+
+for(x=0;x< * my_int;++x) {
+	udelay(10);
+}
+
+if (y < 10 )
+	// That was a long sleep, tell userspace about it
+	printk("We slept a long time!");
+
+z = x * y;
+
+return z;
+
+}
+
+
+int
+my_init (void)
+{
+int x = 10;
+
+
+x = do_work(&x, x);
+
+return x;
+
+}
+
+
+void my_exit( void )
+{
+return;
+}
+
+
+module_init(my_init);
+module_exit(my_exit);
+
+
 This is Task 05 of the Eudyptula Challenge
 ------------------------------------------
 
