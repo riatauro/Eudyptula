@@ -1,0 +1,20 @@
+TASK 3
+
+Now that you have your custom kernel up and running, it's time to modify
+it!
+
+The tasks for this round is:
+  - take the kernel git tree from Task 02 and modify the Makefile to
+    and modify the EXTRAVERSION field.  Do this in a way that the
+    running kernel (after modifying the Makefile, rebuilding, and
+    rebooting) has the characters "-eudyptula" in the version string.
+
+
+OUTPUT:
+
+rtauro@ubuntu:~/Eudyptula/task3$ uname -r
+4.20.0-eudyptula+
+
+[    0.000000] Linux version 4.20.0-eudyptula+ (rtauro@ubuntu) (gcc version 7.3.0 (Ubuntu 7.3.0-27ubuntu1~18.04)) #1 SMP Sat Jan 5 23:11:39 PST 2019
+[    0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz-4.20.0-eudylypta+ root=UUID=ab0c43ff-a0a1-4b0d-88db-0967b552a1b4 ro find_preseed=/preseed.cfg auto noprompt priority=critical locale=en_US quiet
+
